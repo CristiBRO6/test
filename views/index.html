@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Join/Create Room</title>
+        <link rel="stylesheet" href="style/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div class="container" id="join-player">
+            <div class="join-player">
+                <label for="playerName">Name:</label>
+                <input type="text" id="playerName" placeholder="Enter your name">
+                <button id="joinPlayerBtn">Join</button>
+            </div>
+        </div>
+
+        <div class="container" id="main-container" style="display: none;">
+            <h1>Join/Create Room</h1>
+            
+            <div class="card">
+                <label class="playerName"></label>
+            </div>
+
+            <div class="create-room card">
+                <h2>Create Room</h2>
+                <label for="roomName">Room Name:</label>
+                <input type="text" id="roomName" placeholder="Enter room name">
+                <button id="createRoomBtn">Create Room</button>
+            </div>
+            
+            <div class="join-room card">
+                <h2>Join Room</h2>
+                <label for="roomId">Room ID:</label>
+                <input type="text" id="roomId" placeholder="Enter room ID">
+                <button id="joinRoomBtn">Join Room</button>
+            </div>
+        </div>
+        
+        <div class="container" id="waiting-container" style="display: none;">
+            <h2>Waiting for the other player</h2>
+            <p>Room ID: <span id="waitingRoomId"></span></p>
+            <p>Players: <span id="playersCount">1 / 2</span></p>
+            <p>Players ready: <span id="playersReadyCount">0 / 2</span></p>
+            <div class="buttons">
+                <button class="btn-leave" id="leaveRoomBtn">Left</button>
+                <button class="btn-ready readyBtn">Ready</button>
+            </div>
+        </div>
+        
+        <div class="container" id="room-container" style="display: none;">
+            <h1>X & O Modern</h1>
+            <div class="board">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+            <div class="message"></div>
+            <button id="restartButton">Restart Game</button>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>

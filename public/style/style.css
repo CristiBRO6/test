@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #007bff;
+}
+
+.card {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+}
+
+input, select, button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover { background-color: #0056b3; }
+
+button.btn-leave{ background-color: black; }
+button.btn-leave:hover{ background-color: #282b2d; }
+
+button.btn-ready{ 
+    background-color: #f6ee3f; 
+    color: black;
+}
+button.btn-ready:hover{  background-color: #c9c231; }
+
+button.btn-cancel{ 
+    background-color: #e6e8eb; 
+    color: black;
+}
+button.btn-cancel:hover{  background-color: #d9dbde; }
+
+.board {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.cell.winner_x {
+    background: #7FFF00;
+}
+
+.cell.x::before{
+    content: "X";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.cell.winner_o {
+    background: #ff6347;
+}
+
+.cell.o::before{
+    content: "O";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.message {
+    font-size: 1.5em;
+    margin: 10px;
+}
